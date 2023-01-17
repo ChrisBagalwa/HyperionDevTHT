@@ -1,0 +1,50 @@
+Student's solution:
+
+class Solution:
+       def groupAnagrams(self, strs):
+      result = {}
+      for i in strs:
+         x = "".join(sorted())
+         if x in result:
+            result[x].append(i)
+         else:
+            result[x] = [i]
+      return list(result.values())
+ob1 = Solution()
+print(ob1.groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
+
+Code Reviewer's notes:
+---------------------
+
+Correctness:
+-----------
+The program correctly groups the anagrams together by creating a dictionary where the key is a sorted version of the original string and the value is a list of the original strings that are anagrams of the key.
+It correctly returns the values of the dictionary as a list of lists, which is the format of the output as specified in the question.
+
+Efficiency:
+----------
+The code has a time complexity of O(n*klogk) where n is the number of strings and k is the length of the longest string. 
+This is because the sorting of each string takes klogk time and the code runs this sorting for n strings.
+The space complexity is O(n*k) as it creates a dictionary with n keys each of maximum length k.
+
+Style:
+-----
+Variable names are well-chosen and self-explanatory.
+The use of dictionary is good as it will work in O(1)
+However, the student has defined the function inside a class which is unnecessary here, as the function doesn't use any class variables or methods. 
+So the class is not required. The object creation is not needed here as the function is not using any class variable or method.
+
+Documentation:
+-------------
+The code could benefit from some inline comments to explain the purpose of the main blocks of code and the reasoning behind certain decisions, such as why the sorted version of the string is used as the key in the dictionary.
+The function could also have a docstring to explain the input and output of the function.
+
+Overall feedback:
+----------------
+
+Overall, the student's code is mostly correct, efficient and clear in terms of its logic, 
+but it could benefit from some additional documentation, class removal and object creation removal.
+
+Recommended solution:
+--------------------
+The recommended soultion file (anagram.py) can be found in this repository
